@@ -28,16 +28,16 @@ RUN cd ~ && \
     mkdir -p dlib && \
     git clone -b 'v19.9' --single-branch https://github.com/davisking/dlib.git dlib/ && \
     cd  dlib/ && \
-    python3 setup.py install --yes USE_AVX_INSTRUCTIONS
+    python3 setup.py install --no USE_AVX_INSTRUCTIONS --no DLIB_USE_CUDA
 
 COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
+COPY ./app /app
+
 RUN pip install -r requirements.txt
 
 RUN fetch_models
-
-COPY ./app /app
 
 ENTRYPOINT flask run --port=6000 --host=0.0.0.0
