@@ -3,7 +3,7 @@
 ## Installation
 
 #### Using Docker
-    $ git clone https://github.com/guesswh0/face_comparison.git
+    $ git clone https://github.com/legostin/face_comparison.git
     $ docker build ./ -t facerec
     $ docker run -d -p 6000:6000 --name facerecognition -it facerec 
 
@@ -11,7 +11,7 @@
 
 #### Clone
 
-    $ git clone https://github.com/guesswh0/face_comparison.git
+    $ git clone https://github.com/legostin/face_comparison.git
     
 #### Install dependencies
 
