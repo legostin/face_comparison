@@ -4,6 +4,7 @@
 
 #### Using Docker
     $ git clone https://github.com/guesswh0/face_comparison.git
+    $ docker build ./ -t facerec
     $ docker run -d -p 6000:6000 --name facerecognition -it facerec 
 
 Теперь приложение для распознования лиц доступно на локальном 6000 порту и в настройках нджинкс его можно повесить на поддомен или отдельный роут
