@@ -24,11 +24,9 @@ RUN apt-get install -y --fix-missing \
     zip \
     && apt-get clean && rm -rf /tmp/* /var/tmp/*
 
-RUN cd ~ && \
-    mkdir -p dlib && \
-    git clone -b 'v19.9' --single-branch https://github.com/davisking/dlib.git dlib/ && \
-    cd  dlib/ && \
-    python3 setup.py install --no USE_AVX_INSTRUCTIONS --no DLIB_USE_CUDA
+RUN pip3 install numpy
+
+RUN pip3 install dlib
 
 COPY ./requirements.txt /app/requirements.txt
 
